@@ -10,13 +10,13 @@ namespace VertexCover
     public class Graph
     {
         private List<int> verticiesToConnect = new List<int>();
-        private List<List<int>> adjList;
+        private List<List<int>> adjacent_list;
         private int vertices;
         private Random random = new Random();
 
-        public List<List<int>> get_AdjList()
+        public List<List<int>> get_adjacent_list()
         {
-            return adjList;
+            return adjacent_list;
         }
 
         public int get_vertices() { return vertices; }
@@ -25,22 +25,22 @@ namespace VertexCover
         public void create_graph (int v)
         {
             this.vertices = v;
-            adjList = new List<List<int>>();
+            adjacent_list = new List<List<int>>();
 
-            foreach (var vertex in adjList)
+            for (int i = 0; i < v; i++)
             {
-                adjList.Add(vertex);
+                adjacent_list.Add(new List<int>());
             }
         }
 
         public bool add_edge(int source, int destination)
         {
-            if (adjList[source].Contains(destination) || source == destination)
+            if (adjacent_list[source].Contains(destination) || source == destination)
             {
                 return false;
             }
-            adjList[source].Add(destination);
-            adjList[destination].Add(source);
+            adjacent_list[source].Add(destination);
+            adjacent_list[destination].Add(source);
             return true;
         }
 
@@ -65,7 +65,7 @@ namespace VertexCover
             Console.Write(/*"f "+*/ v + " ");
             // Recur for all the vertices
             // adjacent to this vertex
-            foreach (int x in adjList[v])
+            foreach (int x in adjacent_list[v])
             {
                 if (!visited[x])
                 {
@@ -120,18 +120,18 @@ namespace VertexCover
 
                 streamWriter.WriteLine("graph my_graph { node[fontname = Arial, style = \"filled,setlinewidth(4)\",shape = circle]");
 
-                for (int i = 0; i < adjList.Count(); i++)
+                for (int i = 0; i < adjacent_list.Count(); i++)
                 {
                     streamWriter.WriteLine("node" + i + "[ label =\" " + i + "\"]");
                 }
 
-                for (int i = 0; i < adjList.Count(); i++)
+                for (int i = 0; i < adjacent_list.Count(); i++)
                 {
-                    for (int j = 0; j < adjList[i].Count(); j++)
+                    for (int j = 0; j < adjacent_list[i].Count(); j++)
                     {
-                        if (adjList[i][j] >= i)
+                        if (adjacent_list[i][j] >= i)
                         {
-                            streamWriter.WriteLine("node" + i + "--" + "node" + adjList[i][j]);
+                            streamWriter.WriteLine("node" + i + "--" + "node" + adjacent_list[i][j]);
                         }
                     }
                 }
@@ -141,11 +141,6 @@ namespace VertexCover
             catch (IOException)
             {
                 throw;
-            }
-            catch (Exception e)
-            {
-                //throw;
-                Console.WriteLine(e.Message);
             }
             finally
             {

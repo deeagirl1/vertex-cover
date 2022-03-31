@@ -48,9 +48,9 @@ namespace VertexCover
             {
                 MessageBox.Show("Enter a valid integer.");
             }
-            //graph.add_edges_on_probability(prob);
-            //graph.connectedComponents();
-            //graph.write_graph_to_file();
+            graph.add_edges_on_probability(prob);
+            graph.connectedComponents();
+            graph.write_graph_to_file();
 
         }
 
