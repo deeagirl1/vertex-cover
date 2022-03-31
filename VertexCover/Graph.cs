@@ -52,6 +52,47 @@ namespace VertexCover
             }
         }
 
+        public void ReachableVert(int v, bool[] visited, bool foundArbitraryVertice)
+        {
+            if (!foundArbitraryVertice)
+            {
+                verticiesToConnect.Add(v);
+                foundArbitraryVertice = true;
+            }
+
+            // Mark the current node as visited and print it
+            visited[v] = true;
+            Console.Write(/*"f "+*/ v + " ");
+            // Recur for all the vertices
+            // adjacent to this vertex
+            foreach (int x in adjList[v])
+            {
+                if (!visited[x])
+                {
+                    ReachableVert(x, visited, foundArbitraryVertice);
+                }
+                    
+            }
+        }
+
+
+
+        public void connectedComponents()
+        {
+            // Mark all the vertices as not visited
+            bool[] visited = new bool[vertices];
+            for (int v = 0; v < vertices; v++)
+            {
+                if (!visited[v])
+                {
+                    // print all reachable vertices
+                    // from v
+                    ReachableVert(v, visited, false);
+                    Console.WriteLine();
+                }
+            }
+        }
+
         public void add_edges_on_probability(int prob)
         {
             for (int i = 0; i< vertices; i++)
