@@ -27,6 +27,7 @@ namespace VertexCover
             dot.Start();
             dot.WaitForExit();
             pb_Graph.ImageLocation = "graph.png";
+            MessageBox.Show("Clicked");
         }
 
         private void btn_CreateGraph_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace VertexCover
             graph.add_edges_on_probability(prob);
             graph.connectedComponents();
             graph.write_graph_to_file();
+            MessageBox.Show("Clicked");
 
         }
 
@@ -59,6 +61,7 @@ namespace VertexCover
             graph.connect();
             graph.connectedComponents();
             graph.write_graph_to_file();
+            MessageBox.Show("Clicked");
         }
     }
 }

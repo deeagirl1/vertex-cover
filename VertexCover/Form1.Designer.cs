@@ -51,18 +51,21 @@ namespace VertexCover
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tb_Probability);
             this.groupBox1.Controls.Add(this.tb_NrOfVertices);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(14, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 236);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(405, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graph";
             // 
             // btn_ViewGraph
             // 
-            this.btn_ViewGraph.Location = new System.Drawing.Point(206, 55);
+            this.btn_ViewGraph.Location = new System.Drawing.Point(241, 129);
+            this.btn_ViewGraph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ViewGraph.Name = "btn_ViewGraph";
-            this.btn_ViewGraph.Size = new System.Drawing.Size(116, 23);
+            this.btn_ViewGraph.Size = new System.Drawing.Size(133, 31);
             this.btn_ViewGraph.TabIndex = 6;
             this.btn_ViewGraph.Text = "View picture";
             this.btn_ViewGraph.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@ namespace VertexCover
             // 
             // btn_ConnectGraph
             // 
-            this.btn_ConnectGraph.Location = new System.Drawing.Point(206, 184);
+            this.btn_ConnectGraph.Location = new System.Drawing.Point(241, 90);
+            this.btn_ConnectGraph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ConnectGraph.Name = "btn_ConnectGraph";
-            this.btn_ConnectGraph.Size = new System.Drawing.Size(116, 23);
+            this.btn_ConnectGraph.Size = new System.Drawing.Size(133, 31);
             this.btn_ConnectGraph.TabIndex = 5;
             this.btn_ConnectGraph.Text = "Connect";
             this.btn_ConnectGraph.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@ namespace VertexCover
             // 
             // btn_CreateGraph
             // 
-            this.btn_CreateGraph.Location = new System.Drawing.Point(32, 184);
+            this.btn_CreateGraph.Location = new System.Drawing.Point(241, 51);
+            this.btn_CreateGraph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_CreateGraph.Name = "btn_CreateGraph";
-            this.btn_CreateGraph.Size = new System.Drawing.Size(116, 23);
+            this.btn_CreateGraph.Size = new System.Drawing.Size(133, 31);
             this.btn_CreateGraph.TabIndex = 4;
             this.btn_CreateGraph.Text = "Create ";
             this.btn_CreateGraph.UseVisualStyleBackColor = true;
@@ -91,50 +96,54 @@ namespace VertexCover
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 102);
+            this.label2.Location = new System.Drawing.Point(24, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Probability";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 38);
+            this.label1.Location = new System.Drawing.Point(24, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 15);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Number of vertices";
             // 
             // tb_Probability
             // 
-            this.tb_Probability.Location = new System.Drawing.Point(32, 120);
+            this.tb_Probability.Location = new System.Drawing.Point(24, 133);
+            this.tb_Probability.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_Probability.Name = "tb_Probability";
-            this.tb_Probability.Size = new System.Drawing.Size(100, 23);
+            this.tb_Probability.Size = new System.Drawing.Size(135, 27);
             this.tb_Probability.TabIndex = 1;
             // 
             // tb_NrOfVertices
             // 
-            this.tb_NrOfVertices.Location = new System.Drawing.Point(32, 56);
+            this.tb_NrOfVertices.Location = new System.Drawing.Point(24, 78);
+            this.tb_NrOfVertices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_NrOfVertices.Name = "tb_NrOfVertices";
-            this.tb_NrOfVertices.Size = new System.Drawing.Size(100, 23);
+            this.tb_NrOfVertices.Size = new System.Drawing.Size(135, 27);
             this.tb_NrOfVertices.TabIndex = 0;
             // 
             // pb_Graph
             // 
-            this.pb_Graph.Location = new System.Drawing.Point(372, 21);
+            this.pb_Graph.Location = new System.Drawing.Point(425, 28);
+            this.pb_Graph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pb_Graph.Name = "pb_Graph";
-            this.pb_Graph.Size = new System.Drawing.Size(624, 562);
+            this.pb_Graph.Size = new System.Drawing.Size(713, 749);
             this.pb_Graph.TabIndex = 1;
             this.pb_Graph.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 615);
+            this.ClientSize = new System.Drawing.Size(1152, 820);
             this.Controls.Add(this.pb_Graph);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
