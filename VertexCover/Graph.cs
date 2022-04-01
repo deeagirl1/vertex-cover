@@ -19,8 +19,10 @@ namespace VertexCover
             return adjacent_list;
         }
 
-        public int get_vertices() { return vertices; }
-
+        public int get_vertices()
+        {
+            return vertices; 
+        }
 
         public void create_graph (int v)
         {
@@ -46,13 +48,13 @@ namespace VertexCover
 
         public void connect()
         {
-            foreach (var vertex in verticiesToConnect)
+            foreach (int vertex in verticiesToConnect)
             {
                 add_edge(verticiesToConnect[0], vertex);
             }
         }
 
-        public void ReachableVert(int v, bool[] visited, bool foundArbitraryVertice)
+        public void reachable_vertex(int v, bool[] visited, bool foundArbitraryVertice)
         {
             if (!foundArbitraryVertice)
             {
@@ -60,16 +62,14 @@ namespace VertexCover
                 foundArbitraryVertice = true;
             }
 
-            // Mark the current node as visited and print it
+            // Mark the current node as being visited and print it.
             visited[v] = true;
-            Console.Write(/*"f "+*/ v + " ");
-            // Recur for all the vertices
-            // adjacent to this vertex
+            // Recur for all the vertices adjacent to this vertex.
             foreach (int x in adjacent_list[v])
             {
                 if (!visited[x])
                 {
-                    ReachableVert(x, visited, foundArbitraryVertice);
+                    reachable_vertex(x, visited, foundArbitraryVertice);
                 }
                     
             }
@@ -77,18 +77,17 @@ namespace VertexCover
 
 
 
-        public void connectedComponents()
+
+        public void components()
         {
-            // Mark all the vertices as not visited
+            // Mark all the vertices as being not visited.
             bool[] visited = new bool[vertices];
-            for (int v = 0; v < vertices; v++)
+            for (int i = 0; i < vertices; i++)
             {
-                if (!visited[v])
+                if (!visited[i])
                 {
-                    // print all reachable vertices
-                    // from v
-                    ReachableVert(v, visited, false);
-                    Console.WriteLine();
+                    // Print all reachable vertices from vertex v.
+                    reachable_vertex(i, visited, false);
                 }
             }
         }

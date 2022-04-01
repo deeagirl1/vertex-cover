@@ -50,18 +50,19 @@ namespace VertexCover
                 MessageBox.Show("Enter a valid integer.");
             }
             graph.add_edges_on_probability(prob);
-            graph.connectedComponents();
+            graph.components();
             graph.write_graph_to_file();
-            MessageBox.Show("Clicked");
+            MessageBox.Show("Graph created successfully!");
+            
 
         }
 
         private void btn_ConnectGraph_Click(object sender, EventArgs e)
         {
             graph.connect();
-            graph.connectedComponents();
+            graph.components();
             graph.write_graph_to_file();
-            MessageBox.Show("Clicked");
+            MessageBox.Show("Graph connected successfully!");
         }
     }
 }
