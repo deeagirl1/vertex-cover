@@ -13,6 +13,8 @@ namespace VertexCover
         private List<List<int>> adjacent_list;
         private int vertices;
         private Random random = new Random();
+        public bool IsOkVertex { get; set; } = true;
+        public int progress { get; set; } = 0;
 
         public List<List<int>> get_adjacent_list()
         {
@@ -74,8 +76,6 @@ namespace VertexCover
                     
             }
         }
-
-
 
 
         public void components()
@@ -149,6 +149,54 @@ namespace VertexCover
                 }
             }
 
+        }
+
+
+        public bool Validate(bool[] cover, int n, int k)
+        {
+            if (!IsOkVertex)
+            {
+                return true;
+            }
+
+            int count = 0;
+
+            for (int i = 0; i < cover.Length; i++)
+            {
+                if(cover[i] == true)
+                {
+                    count++;
+                    progress++;
+                }
+            }
+
+            bool IsReached = true;
+            if(count == k)
+            {
+                for (int i = 0; i < cover.Length; i++)
+                {
+                    for (int j = 0; j < adjacent_list[i].Count; j++)
+                    {
+                        if ((cover[i] == false) && (cover[adjacent_list[i][j]] == false))
+                        {
+                            IsReached = false;
+                            return false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                IsReached = false;
+                return false;
+            }
+
+            if (IsReached)
+            {
+                IsOkVertex = false;
+            }
+
+            return IsReached;
         }
     }
 }

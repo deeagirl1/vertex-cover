@@ -14,6 +14,7 @@ namespace VertexCover
     public partial class Form1 : Form
     {
         Graph graph = new Graph();
+        VC_ALG algorithm = new VC_ALG();
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +44,6 @@ namespace VertexCover
                     throw new Exception();
                 }
                 graph.create_graph(vertices);
-                MessageBox.Show("Graph created successfully!");
             }
             catch
             {
@@ -57,12 +57,44 @@ namespace VertexCover
 
         }
 
+
+
         private void btn_ConnectGraph_Click(object sender, EventArgs e)
         {
             graph.connect();
             graph.components();
             graph.write_graph_to_file();
             MessageBox.Show("Graph connected successfully!");
+        }
+
+        private void btn_bruteForce_Click(object sender, EventArgs e)
+        {
+            graph.IsOkVertex = true;
+            bool algResult = algorithm.Validate(graph, new bool[graph.get_vertices()], graph.get_vertices(), 0, Convert.ToInt32(txt_bruteForce.Text));
+            if (algResult)
+            {
+                lbl_result.Text = "TRUE";
+                lbl_result.ForeColor = Color.Green;
+                if(graph.progress <= 100)
+                {
+                    pb.Value = graph.progress;
+                    graph.progress = 0;
+                }
+                else
+                {
+                    pb.Value = 100;
+                    graph.progress = 0;
+                }
+              
+
+            }
+            else
+            {
+                lbl_result.Text = "FALSE";
+                lbl_result.ForeColor = Color.Red;
+                pb.Value = 0;
+                graph.progress = 0;
+            }
         }
     }
 }
