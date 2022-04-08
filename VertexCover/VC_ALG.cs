@@ -8,10 +8,6 @@ namespace VertexCover
 {
     public class VC_ALG
     {
-        public VC_ALG()
-        {
-
-        }
 
         public bool Validate(Graph g, bool[] cover, int n, int i, int k)
         {
@@ -24,7 +20,7 @@ namespace VertexCover
 
             if (i == n)
             {
-                return (g.Validate(cover, n, k));
+                return g.Validate(cover, n, k);
             }
             else
             {
