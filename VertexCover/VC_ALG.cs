@@ -9,6 +9,7 @@ namespace VertexCover
     public class VC_ALG
     {
 
+        #region Week 2
         public bool Validate(Graph g, bool[] cover, int n, int i, int k)
         {
             if (k > n)
@@ -40,5 +41,7 @@ namespace VertexCover
             }
             return false;
         }
+
+        #endregion
     }
 }

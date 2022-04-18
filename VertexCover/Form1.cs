@@ -20,7 +20,17 @@ namespace VertexCover
             InitializeComponent();
         }
 
-        private void btn_ViewGraph_Click(object sender, EventArgs e)
+        //private void btn_ViewGraph_Click(object sender, EventArgs e)
+        //{
+        //    Process dot = new Process();
+        //    dot.StartInfo.FileName = "dot.exe";
+        //    dot.StartInfo.Arguments = "-Tpng graph.dot -o graph.png";
+        //    dot.Start();
+        //    dot.WaitForExit();
+        //    pb_Graph.ImageLocation = "graph.png";
+        //}
+
+        private void displayGraph()
         {
             Process dot = new Process();
             dot.StartInfo.FileName = "dot.exe";
@@ -52,8 +62,10 @@ namespace VertexCover
             graph.add_edges_on_probability(prob);
             graph.components();
             graph.write_graph_to_file();
+            displayGraph();
 
-            
+
+
 
         }
 
@@ -64,13 +76,13 @@ namespace VertexCover
             graph.connect();
             graph.components();
             graph.write_graph_to_file();
-            MessageBox.Show("Graph connected successfully!");
+            displayGraph();
         }
 
         private void btn_bruteForce_Click(object sender, EventArgs e)
         {
             graph.IsOkVertex = true;
-            bool algResult = algorithm.Validate(graph, new bool[graph.get_vertices()], graph.get_vertices(), 0, Convert.ToInt32(txt_bruteForce.Text));
+            bool algResult = algorithm.Validate(graph, new bool[graph.Vertices], graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
             if (algResult)
             {
                 lbl_result.Text = "TRUE";
@@ -95,6 +107,50 @@ namespace VertexCover
                 pb.Value = 0;
                 graph.progress = 0;
             }
+        }
+
+        private void btn_coloringGraph_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
+                graph.updateColorGraphToFile();
+                displayGraph();
+            }
+            catch { MessageBox.Show("Write k in textbox"); }
+        }
+
+        private void btn_pendentPlus_Click(object sender, EventArgs e)
+        {
+            graph.PendantIncrement();
+            graph.updateColorGraphToFile();
+            graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
+            displayGraph();
+
+        }
+
+        private void btn_TopPlus_Click(object sender, EventArgs e)
+        {
+            graph.TopIncrement(Convert.ToInt32(txt_KEdges.Text));
+            graph.updateColorGraphToFile();
+            graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
+            displayGraph();
+        }
+
+        private void btn_pendentMinus_Click(object sender, EventArgs e)
+        {
+            graph.PendantDecrement();
+            graph.updateColorGraphToFile();
+            graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
+            displayGraph();
+        }
+
+        private void btn_Top_plus_Click(object sender, EventArgs e)
+        {
+            graph.TopDecrement(Convert.ToInt32(txt_KEdges.Text));
+            graph.updateColorGraphToFile();
+            graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
+            displayGraph();
         }
     }
 }
