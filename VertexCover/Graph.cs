@@ -209,8 +209,8 @@ namespace VertexCover
         public void kernelization(int k)
         {
             findPendants();
-            findTops(k);
-            findIsolated();
+            find_tops(k);
+            find_isolated_vertices();
         }
 
         // a function to find the pendants of the graph
@@ -247,7 +247,7 @@ namespace VertexCover
             }
         }
 
-        private void findTops(int k)
+        private void find_tops(int k)
         {
             Tops.Clear();
 
@@ -266,7 +266,7 @@ namespace VertexCover
             }
         }
 
-        private void findIsolated()
+        private void find_isolated_vertices()
         {
             IsolatedVertices.Clear();
 
@@ -353,7 +353,7 @@ namespace VertexCover
         }
 
         // a function to remove an edge between two vertices 
-        public bool remove_Edge(int src, int dest)
+        public bool remove_edge(int src, int dest)
         {
             if (adjacent_list[src].Contains(dest) && adjacent_list[dest].Contains(src))
             {
@@ -365,7 +365,7 @@ namespace VertexCover
         }
 
         // a function to increment the Tops of the graph
-        public void TopIncrement(int k)
+        public void top_increment(int k)
         {
             // iterate through the vertices of the graph 
             for (int i = 0; i < Vertices; i++)
@@ -394,7 +394,7 @@ namespace VertexCover
             }
         }
 
-        public void TopDecrement(int k)
+        public void top_decrement(int k)
         {
             for (int i = 0; i < Vertices; i++)
             {
@@ -404,7 +404,7 @@ namespace VertexCover
                     {
                         if (adjacent_list[j].Count > k)
                         {
-                            remove_Edge(i, j);
+                            remove_edge(i, j);
                         }
                     }
                     if (Tops.Contains(i))
@@ -416,7 +416,7 @@ namespace VertexCover
             }
         }
 
-        public void PendantIncrement()
+        public void pendants_increment()
         {
             for (int i = 0; i < Vertices; i++)
             {
@@ -426,7 +426,7 @@ namespace VertexCover
                     {
                         if (adjacent_list[j].Count > 1)
                         {
-                            remove_Edge(i, j);
+                            remove_edge(i, j);
                         }
                     }
                     if (!Pendants.Contains(i))
@@ -438,7 +438,7 @@ namespace VertexCover
             }
         }
 
-        public void PendantDecrement()
+        public void pendants_decrement()
         {
             for (int i = 0; i < Vertices; i++)
             {

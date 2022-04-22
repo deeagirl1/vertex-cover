@@ -82,7 +82,7 @@ namespace VertexCover
         private void btn_bruteForce_Click(object sender, EventArgs e)
         {
             graph.IsOkVertex = true;
-            bool algResult = algorithm.Validate(graph, new bool[graph.Vertices], graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
+            bool algResult = algorithm.BruteForce(graph, new bool[graph.Vertices], graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
             if (algResult)
             {
                 lbl_result.Text = "TRUE";
@@ -122,7 +122,7 @@ namespace VertexCover
 
         private void btn_pendentPlus_Click(object sender, EventArgs e)
         {
-            graph.PendantIncrement();
+            graph.pendants_increment();
             graph.updateColorGraphToFile();
             graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
             displayGraph();
@@ -131,7 +131,7 @@ namespace VertexCover
 
         private void btn_TopPlus_Click(object sender, EventArgs e)
         {
-            graph.TopIncrement(Convert.ToInt32(txt_KEdges.Text));
+            graph.top_increment(Convert.ToInt32(txt_KEdges.Text));
             graph.updateColorGraphToFile();
             graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
             displayGraph();
@@ -139,7 +139,7 @@ namespace VertexCover
 
         private void btn_pendentMinus_Click(object sender, EventArgs e)
         {
-            graph.PendantDecrement();
+            graph.pendants_decrement();
             graph.updateColorGraphToFile();
             graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
             displayGraph();
@@ -147,10 +147,17 @@ namespace VertexCover
 
         private void btn_Top_plus_Click(object sender, EventArgs e)
         {
-            graph.TopDecrement(Convert.ToInt32(txt_KEdges.Text));
+            graph.top_decrement(Convert.ToInt32(txt_KEdges.Text));
             graph.updateColorGraphToFile();
             graph.kernelization(Convert.ToInt32(txt_KEdges.Text));
             displayGraph();
+        }
+
+        private void btn_enchanced_brute_force_Click(object sender, EventArgs e)
+        {
+            algorithm.enhanced_brute_force(graph, graph.Vertices);
+            Console.WriteLine("Test");
+
         }
     }
 }
