@@ -463,5 +463,54 @@ namespace VertexCover
 
         #endregion
 
+        #region Week 4
+        public bool ValidateSmart(int[] cover, int n, int k)
+        {
+            if (!IsOkVertex)
+            {
+                return true;
+            }
+            int count = 0;
+            for (int i = 0; i < cover.Length; i++)
+            {
+                if (cover[i] != 0) 
+                {
+                    count++;
+                    progress++;
+                }
+            }
+
+            bool success = true;
+
+            if (count <= k && (count + IsolatedVertices.Count + Pendants.Count >= k))
+            {
+                for (int i = 0; i < cover.Length; i++)
+                {
+                    for (int j = 0; j < adjacent_list[i].Count; j++)
+                    {
+                        if ((cover[i] == 0) && (cover[adjacent_list[i][j]] == 0))
+                        {
+                            success = false;
+                            return false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                success = false;
+                return false;
+            }
+
+            if (success == true)
+            {
+                IsOkVertex = false;
+            }
+
+            return success;
+        }
+
+        #endregion
+
     }
 }

@@ -155,9 +155,51 @@ namespace VertexCover
 
         private void btn_enchanced_brute_force_Click(object sender, EventArgs e)
         {
-            algorithm.enhanced_brute_force(graph, graph.Vertices);
-            Console.WriteLine("Test");
+            int[] coverInitial = preprocess();
+            graph.IsOkVertex = true;
 
+            bool algResult = algorithm.enhanced_brute_force(graph, coverInitial, graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
+            if (algResult)
+            {
+                lbl_result.Text = "TRUE";
+                lbl_result.ForeColor = Color.Green;
+                if (graph.progress <= 100)
+                {
+                    pb.Value = graph.progress;
+                    graph.progress = 0;
+                }
+                else
+                {
+                    pb.Value = 100;
+                    graph.progress = 0;
+                }
+            }
+            else
+            {
+                lbl_result.Text = "FALSE";
+                lbl_result.ForeColor = Color.Red;
+                pb.Value = 0;
+                graph.progress = 0;
+            }
+        }
+
+
+        private int[] preprocess()
+        {
+            graph.kernelization(Convert.ToInt32(txt_bruteForce.Text));
+            int[] cover = new int[graph.Vertices];
+
+            foreach (int top in graph.Tops)
+            {
+                cover[top] = 2;
+            }
+
+            foreach (int pendant in graph.Pendants)
+            {
+                cover[graph.get_adjacent_list()[pendant][0]] = 2;
+            }
+
+            return cover;
         }
     }
 }

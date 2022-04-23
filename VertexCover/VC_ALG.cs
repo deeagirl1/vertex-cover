@@ -13,7 +13,10 @@ namespace VertexCover
         public bool BruteForce(Graph graph, bool[] cover, int n, int i, int k)
         {
             if (k > n)
+            {
                 return false;
+            }
+
             if (!graph.IsOkVertex)
             {
                 return true;
@@ -45,49 +48,65 @@ namespace VertexCover
         #endregion
 
         #region Week 4
-        public void enhanced_brute_force(Graph graph, int vertices)
+        public bool enhanced_brute_force(Graph g, int[] cover, int n, int i, int k)
         {
-            int[] assignment = new int[vertices];
-            List<int> cover = new List<int>();
-            bool valid = false;
-
-            while (!valid)
+            
+            if (k > n)
             {
-                int candidateIndex = 0;
-                int maxUncoveredNeighbours = 0;
+                return false;
+            }
 
-                for (int i = 0; i < vertices; i++)
+            if (!g.IsOkVertex)
+            {
+                return true;
+            }
+
+            if (i == n)
+            {
+                return g.ValidateSmart(cover, n, k);
+            }
+
+            else
+            {
+                if (cover[i] == 0 || cover[i] == 1)
                 {
-                    if (assignment[i] != 1)
+                    if (g.Pendants.Contains(i) || g.IsolatedVertices.Contains(i))
                     {
-                        int sumUncovered = 0;
-                        for (int j = 0; j < vertices; j++)
+                        cover[i] = 0; 
+                        enhanced_brute_force(g, cover, n, i + 1, k);
+                        if (!g.IsOkVertex)
                         {
-                            if (graph.get_adjacent_list()[i].Contains(j) && assignment[j] != 1)
-                                sumUncovered++;
+                            return true;
                         }
-                        if (sumUncovered > maxUncoveredNeighbours)
+                    }
+                    else
+                    {
+                        cover[i] = 0;
+                        enhanced_brute_force(g, cover, n, i + 1, k);
+                        if (!g.IsOkVertex)
                         {
-                            candidateIndex = i;
-                            maxUncoveredNeighbours = sumUncovered;
+                            return true;
+                        }
+
+                        cover[i] = 1;
+                        enhanced_brute_force(g, cover, n, i + 1, k);
+                        if (!g.IsOkVertex)
+                        {
+                            return true;
                         }
                     }
                 }
-                if (maxUncoveredNeighbours == 0)
-                    valid = true;
-                else
+                else if (cover[i] == 2)
                 {
-                    cover.Add(candidateIndex);
-                    assignment[candidateIndex] = 1;
+                    enhanced_brute_force(g, cover, n, i + 1, k);
+                    if (!g.IsOkVertex)
+                    {
+                        return true;
+                    }
                 }
             }
-            int size = 0;
-            for (int i = 0; i < vertices; i++)
-            {
-                if (assignment[i] == 1)
-                    size++;
-            }
-            #endregion
+            return false;
         }
+        #endregion
     }
 }

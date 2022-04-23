@@ -67,18 +67,21 @@ namespace VertexCover
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tb_Probability);
             this.groupBox1.Controls.Add(this.tb_NrOfVertices);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(14, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 138);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(389, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graph";
             // 
             // btn_ConnectGraph
             // 
-            this.btn_ConnectGraph.Location = new System.Drawing.Point(211, 84);
+            this.btn_ConnectGraph.Location = new System.Drawing.Point(241, 112);
+            this.btn_ConnectGraph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ConnectGraph.Name = "btn_ConnectGraph";
-            this.btn_ConnectGraph.Size = new System.Drawing.Size(116, 23);
+            this.btn_ConnectGraph.Size = new System.Drawing.Size(133, 31);
             this.btn_ConnectGraph.TabIndex = 5;
             this.btn_ConnectGraph.Text = "Connect";
             this.btn_ConnectGraph.UseVisualStyleBackColor = true;
@@ -86,9 +89,10 @@ namespace VertexCover
             // 
             // btn_CreateGraph
             // 
-            this.btn_CreateGraph.Location = new System.Drawing.Point(211, 55);
+            this.btn_CreateGraph.Location = new System.Drawing.Point(241, 73);
+            this.btn_CreateGraph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_CreateGraph.Name = "btn_CreateGraph";
-            this.btn_CreateGraph.Size = new System.Drawing.Size(116, 23);
+            this.btn_CreateGraph.Size = new System.Drawing.Size(133, 31);
             this.btn_CreateGraph.TabIndex = 4;
             this.btn_CreateGraph.Text = "Create ";
             this.btn_CreateGraph.UseVisualStyleBackColor = true;
@@ -97,40 +101,44 @@ namespace VertexCover
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 82);
+            this.label2.Location = new System.Drawing.Point(24, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Probability";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 38);
+            this.label1.Location = new System.Drawing.Point(24, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 15);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Number of vertices";
             // 
             // tb_Probability
             // 
-            this.tb_Probability.Location = new System.Drawing.Point(21, 100);
+            this.tb_Probability.Location = new System.Drawing.Point(24, 133);
+            this.tb_Probability.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_Probability.Name = "tb_Probability";
-            this.tb_Probability.Size = new System.Drawing.Size(119, 23);
+            this.tb_Probability.Size = new System.Drawing.Size(135, 27);
             this.tb_Probability.TabIndex = 1;
             // 
             // tb_NrOfVertices
             // 
-            this.tb_NrOfVertices.Location = new System.Drawing.Point(21, 58);
+            this.tb_NrOfVertices.Location = new System.Drawing.Point(24, 77);
+            this.tb_NrOfVertices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_NrOfVertices.Name = "tb_NrOfVertices";
-            this.tb_NrOfVertices.Size = new System.Drawing.Size(119, 23);
+            this.tb_NrOfVertices.Size = new System.Drawing.Size(135, 27);
             this.tb_NrOfVertices.TabIndex = 0;
             // 
             // pb_Graph
             // 
-            this.pb_Graph.Location = new System.Drawing.Point(372, 21);
+            this.pb_Graph.Location = new System.Drawing.Point(425, 28);
+            this.pb_Graph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pb_Graph.Name = "pb_Graph";
-            this.pb_Graph.Size = new System.Drawing.Size(624, 254);
+            this.pb_Graph.Size = new System.Drawing.Size(713, 339);
+            this.pb_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Graph.TabIndex = 1;
             this.pb_Graph.TabStop = false;
             // 
@@ -142,21 +150,18 @@ namespace VertexCover
             this.gb_bruteForceSearch.Controls.Add(this.label3);
             this.gb_bruteForceSearch.Controls.Add(this.btn_bruteForce);
             this.gb_bruteForceSearch.Controls.Add(this.txt_bruteForce);
-            this.gb_bruteForceSearch.Location = new System.Drawing.Point(12, 155);
-            this.gb_bruteForceSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gb_bruteForceSearch.Location = new System.Drawing.Point(14, 207);
             this.gb_bruteForceSearch.Name = "gb_bruteForceSearch";
-            this.gb_bruteForceSearch.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_bruteForceSearch.Size = new System.Drawing.Size(340, 120);
+            this.gb_bruteForceSearch.Size = new System.Drawing.Size(389, 160);
             this.gb_bruteForceSearch.TabIndex = 2;
             this.gb_bruteForceSearch.TabStop = false;
             this.gb_bruteForceSearch.Text = "Brute Force";
             // 
             // btn_enchanced_brute_force
             // 
-            this.btn_enchanced_brute_force.Location = new System.Drawing.Point(164, 84);
-            this.btn_enchanced_brute_force.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_enchanced_brute_force.Location = new System.Drawing.Point(187, 112);
             this.btn_enchanced_brute_force.Name = "btn_enchanced_brute_force";
-            this.btn_enchanced_brute_force.Size = new System.Drawing.Size(147, 23);
+            this.btn_enchanced_brute_force.Size = new System.Drawing.Size(168, 31);
             this.btn_enchanced_brute_force.TabIndex = 6;
             this.btn_enchanced_brute_force.Text = "Enchaned Brute Force";
             this.btn_enchanced_brute_force.UseVisualStyleBackColor = true;
@@ -165,35 +170,34 @@ namespace VertexCover
             // lbl_result
             // 
             this.lbl_result.AutoSize = true;
-            this.lbl_result.Location = new System.Drawing.Point(75, 92);
+            this.lbl_result.Location = new System.Drawing.Point(86, 123);
             this.lbl_result.Name = "lbl_result";
-            this.lbl_result.Size = new System.Drawing.Size(0, 15);
+            this.lbl_result.Size = new System.Drawing.Size(0, 20);
             this.lbl_result.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 92);
+            this.label4.Location = new System.Drawing.Point(24, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 15);
+            this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Result: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 17);
+            this.label3.Location = new System.Drawing.Point(24, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 15);
+            this.label3.Size = new System.Drawing.Size(205, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "The size K of the vertex cover:";
             // 
             // btn_bruteForce
             // 
-            this.btn_bruteForce.Location = new System.Drawing.Point(180, 49);
-            this.btn_bruteForce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_bruteForce.Location = new System.Drawing.Point(187, 65);
             this.btn_bruteForce.Name = "btn_bruteForce";
-            this.btn_bruteForce.Size = new System.Drawing.Size(116, 23);
+            this.btn_bruteForce.Size = new System.Drawing.Size(168, 31);
             this.btn_bruteForce.TabIndex = 1;
             this.btn_bruteForce.Text = "Brute Force";
             this.btn_bruteForce.UseVisualStyleBackColor = true;
@@ -201,18 +205,16 @@ namespace VertexCover
             // 
             // txt_bruteForce
             // 
-            this.txt_bruteForce.Location = new System.Drawing.Point(21, 50);
-            this.txt_bruteForce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_bruteForce.Location = new System.Drawing.Point(24, 67);
             this.txt_bruteForce.Name = "txt_bruteForce";
-            this.txt_bruteForce.Size = new System.Drawing.Size(119, 23);
+            this.txt_bruteForce.Size = new System.Drawing.Size(135, 27);
             this.txt_bruteForce.TabIndex = 0;
             // 
             // pb
             // 
-            this.pb.Location = new System.Drawing.Point(12, 280);
-            this.pb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pb.Location = new System.Drawing.Point(14, 373);
             this.pb.Name = "pb";
-            this.pb.Size = new System.Drawing.Size(340, 30);
+            this.pb.Size = new System.Drawing.Size(389, 40);
             this.pb.TabIndex = 3;
             // 
             // gb_kernelization
@@ -224,21 +226,18 @@ namespace VertexCover
             this.gb_kernelization.Controls.Add(this.btn_coloringGraph);
             this.gb_kernelization.Controls.Add(this.lbl_Tops);
             this.gb_kernelization.Controls.Add(this.txt_KEdges);
-            this.gb_kernelization.Location = new System.Drawing.Point(12, 321);
-            this.gb_kernelization.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gb_kernelization.Location = new System.Drawing.Point(14, 428);
             this.gb_kernelization.Name = "gb_kernelization";
-            this.gb_kernelization.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_kernelization.Size = new System.Drawing.Size(340, 167);
+            this.gb_kernelization.Size = new System.Drawing.Size(389, 223);
             this.gb_kernelization.TabIndex = 4;
             this.gb_kernelization.TabStop = false;
             this.gb_kernelization.Text = "Kernelization";
             // 
             // btn_TopPlus
             // 
-            this.btn_TopPlus.Location = new System.Drawing.Point(90, 75);
-            this.btn_TopPlus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_TopPlus.Location = new System.Drawing.Point(103, 100);
             this.btn_TopPlus.Name = "btn_TopPlus";
-            this.btn_TopPlus.Size = new System.Drawing.Size(49, 23);
+            this.btn_TopPlus.Size = new System.Drawing.Size(56, 31);
             this.btn_TopPlus.TabIndex = 11;
             this.btn_TopPlus.Text = "T++";
             this.btn_TopPlus.UseVisualStyleBackColor = true;
@@ -246,10 +245,9 @@ namespace VertexCover
             // 
             // btn_Top_plus
             // 
-            this.btn_Top_plus.Location = new System.Drawing.Point(90, 103);
-            this.btn_Top_plus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Top_plus.Location = new System.Drawing.Point(103, 137);
             this.btn_Top_plus.Name = "btn_Top_plus";
-            this.btn_Top_plus.Size = new System.Drawing.Size(49, 23);
+            this.btn_Top_plus.Size = new System.Drawing.Size(56, 31);
             this.btn_Top_plus.TabIndex = 10;
             this.btn_Top_plus.Text = "T--";
             this.btn_Top_plus.UseVisualStyleBackColor = true;
@@ -257,10 +255,9 @@ namespace VertexCover
             // 
             // btn_pendentMinus
             // 
-            this.btn_pendentMinus.Location = new System.Drawing.Point(21, 103);
-            this.btn_pendentMinus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_pendentMinus.Location = new System.Drawing.Point(24, 137);
             this.btn_pendentMinus.Name = "btn_pendentMinus";
-            this.btn_pendentMinus.Size = new System.Drawing.Size(49, 23);
+            this.btn_pendentMinus.Size = new System.Drawing.Size(56, 31);
             this.btn_pendentMinus.TabIndex = 9;
             this.btn_pendentMinus.Text = "P--";
             this.btn_pendentMinus.UseVisualStyleBackColor = true;
@@ -268,10 +265,9 @@ namespace VertexCover
             // 
             // btn_pendentPlus
             // 
-            this.btn_pendentPlus.Location = new System.Drawing.Point(21, 75);
-            this.btn_pendentPlus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_pendentPlus.Location = new System.Drawing.Point(24, 100);
             this.btn_pendentPlus.Name = "btn_pendentPlus";
-            this.btn_pendentPlus.Size = new System.Drawing.Size(49, 23);
+            this.btn_pendentPlus.Size = new System.Drawing.Size(56, 31);
             this.btn_pendentPlus.TabIndex = 8;
             this.btn_pendentPlus.Text = "P++";
             this.btn_pendentPlus.UseVisualStyleBackColor = true;
@@ -279,10 +275,9 @@ namespace VertexCover
             // 
             // btn_coloringGraph
             // 
-            this.btn_coloringGraph.Location = new System.Drawing.Point(180, 67);
-            this.btn_coloringGraph.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_coloringGraph.Location = new System.Drawing.Point(206, 89);
             this.btn_coloringGraph.Name = "btn_coloringGraph";
-            this.btn_coloringGraph.Size = new System.Drawing.Size(116, 39);
+            this.btn_coloringGraph.Size = new System.Drawing.Size(133, 52);
             this.btn_coloringGraph.TabIndex = 6;
             this.btn_coloringGraph.Text = "Kernelization";
             this.btn_coloringGraph.UseVisualStyleBackColor = true;
@@ -291,30 +286,30 @@ namespace VertexCover
             // lbl_Tops
             // 
             this.lbl_Tops.AutoSize = true;
-            this.lbl_Tops.Location = new System.Drawing.Point(21, 33);
+            this.lbl_Tops.Location = new System.Drawing.Point(24, 44);
             this.lbl_Tops.Name = "lbl_Tops";
-            this.lbl_Tops.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Tops.Size = new System.Drawing.Size(65, 20);
             this.lbl_Tops.TabIndex = 7;
             this.lbl_Tops.Text = "K Edges:";
             // 
             // txt_KEdges
             // 
-            this.txt_KEdges.Location = new System.Drawing.Point(21, 50);
-            this.txt_KEdges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_KEdges.Location = new System.Drawing.Point(24, 67);
             this.txt_KEdges.Name = "txt_KEdges";
-            this.txt_KEdges.Size = new System.Drawing.Size(119, 23);
+            this.txt_KEdges.Size = new System.Drawing.Size(135, 27);
             this.txt_KEdges.TabIndex = 6;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 615);
+            this.ClientSize = new System.Drawing.Size(1152, 820);
             this.Controls.Add(this.gb_kernelization);
             this.Controls.Add(this.pb);
             this.Controls.Add(this.gb_bruteForceSearch);
             this.Controls.Add(this.pb_Graph);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Vertex Cover";
             this.groupBox1.ResumeLayout(false);
