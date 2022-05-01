@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace VertexCover
     {
         Graph graph = new Graph();
         VC_ALG algorithm = new VC_ALG();
+
         public Form1()
         {
             InitializeComponent();
@@ -63,10 +65,6 @@ namespace VertexCover
             graph.components();
             graph.write_graph_to_file();
             displayGraph();
-
-
-
-
         }
 
 
@@ -85,8 +83,6 @@ namespace VertexCover
             bool algResult = algorithm.BruteForce(graph, new bool[graph.Vertices], graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
             if (algResult)
             {
-                lbl_result.Text = "TRUE";
-                lbl_result.ForeColor = Color.Green;
                 if(graph.progress <= 100)
                 {
                     pb.Value = graph.progress;
@@ -97,16 +93,15 @@ namespace VertexCover
                     pb.Value = 100;
                     graph.progress = 0;
                 }
-              
-
+                MessageBox.Show("True");
             }
             else
             {
-                lbl_result.Text = "FALSE";
-                lbl_result.ForeColor = Color.Red;
                 pb.Value = 0;
                 graph.progress = 0;
+                MessageBox.Show("False");
             }
+
         }
 
         private void btn_coloringGraph_Click(object sender, EventArgs e)
@@ -161,8 +156,6 @@ namespace VertexCover
             bool algResult = algorithm.enhanced_brute_force(graph, coverInitial, graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
             if (algResult)
             {
-                lbl_result.Text = "TRUE";
-                lbl_result.ForeColor = Color.Green;
                 if (graph.progress <= 100)
                 {
                     pb.Value = graph.progress;
@@ -173,13 +166,13 @@ namespace VertexCover
                     pb.Value = 100;
                     graph.progress = 0;
                 }
+                MessageBox.Show("True");
             }
             else
             {
-                lbl_result.Text = "FALSE";
-                lbl_result.ForeColor = Color.Red;
                 pb.Value = 0;
                 graph.progress = 0;
+                MessageBox.Show("False");
             }
         }
 
@@ -200,6 +193,13 @@ namespace VertexCover
             }
 
             return cover;
+        }
+
+        private void btn_approximation_Click(object sender, EventArgs e)
+        {
+            //prints size of vertex cover
+            int size_covered_vertices = algorithm.ValidateAprox(graph, graph.Vertices);
+            MessageBox.Show($"The graph can be covered with {size_covered_vertices} vertices");
         }
     }
 }

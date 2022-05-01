@@ -108,5 +108,60 @@ namespace VertexCover
             return false;
         }
         #endregion
+
+        #region Week 5
+        public int ValidateAprox(Graph g, int vertices)
+        {
+            int[] assignment = new int[vertices];
+            List<int> cover = new List<int>();
+            bool valid = false;
+
+            while (!valid)
+            {
+                //look for vertex with most uncovered edges
+                int candidateIndex = 0;
+                int maxUncoveredNeighbours = 0;
+
+                for (int i = 0; i < vertices; i++)
+                {
+                    // vertex with 1 already covers adjacent edges
+                    if (assignment[i] != 1)
+                    {
+                        int sumUncovered = 0;
+                        for (int j = 0; j < vertices; j++)
+                        {
+                            if (g.get_adjacent_list()[i].Contains(j) && assignment[j] != 1)
+                            {
+                                sumUncovered++;
+                            }
+                        }
+                        if (sumUncovered > maxUncoveredNeighbours)
+                        {
+                            candidateIndex = i;
+                            maxUncoveredNeighbours = sumUncovered;
+                        }
+                    }
+                }
+                //if not found then exit, otherwise add to cover
+                if (maxUncoveredNeighbours == 0)
+                    valid = true;
+                else
+                {
+                    cover.Add(candidateIndex);
+                    assignment[candidateIndex] = 1;
+                }
+            }
+            // size of cover and print
+            int size = 0;
+            for (int i = 0; i < vertices; i++)
+            {
+                if (assignment[i] == 1)
+                {
+                    size++;
+                }
+            }
+            return size;
+        }
+        #endregion
     }
 }

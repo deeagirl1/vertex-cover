@@ -38,9 +38,8 @@ namespace VertexCover
             this.tb_NrOfVertices = new System.Windows.Forms.TextBox();
             this.pb_Graph = new System.Windows.Forms.PictureBox();
             this.gb_bruteForceSearch = new System.Windows.Forms.GroupBox();
+            this.btn_approximation = new System.Windows.Forms.Button();
             this.btn_enchanced_brute_force = new System.Windows.Forms.Button();
-            this.lbl_result = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_bruteForce = new System.Windows.Forms.Button();
             this.txt_bruteForce = new System.Windows.Forms.TextBox();
@@ -134,60 +133,52 @@ namespace VertexCover
             // 
             // pb_Graph
             // 
-            this.pb_Graph.Location = new System.Drawing.Point(425, 28);
+            this.pb_Graph.Location = new System.Drawing.Point(427, 67);
             this.pb_Graph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pb_Graph.Name = "pb_Graph";
-            this.pb_Graph.Size = new System.Drawing.Size(713, 339);
+            this.pb_Graph.Size = new System.Drawing.Size(713, 566);
             this.pb_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Graph.TabIndex = 1;
             this.pb_Graph.TabStop = false;
             // 
             // gb_bruteForceSearch
             // 
+            this.gb_bruteForceSearch.Controls.Add(this.btn_approximation);
             this.gb_bruteForceSearch.Controls.Add(this.btn_enchanced_brute_force);
-            this.gb_bruteForceSearch.Controls.Add(this.lbl_result);
-            this.gb_bruteForceSearch.Controls.Add(this.label4);
             this.gb_bruteForceSearch.Controls.Add(this.label3);
             this.gb_bruteForceSearch.Controls.Add(this.btn_bruteForce);
             this.gb_bruteForceSearch.Controls.Add(this.txt_bruteForce);
             this.gb_bruteForceSearch.Location = new System.Drawing.Point(14, 207);
             this.gb_bruteForceSearch.Name = "gb_bruteForceSearch";
-            this.gb_bruteForceSearch.Size = new System.Drawing.Size(389, 160);
+            this.gb_bruteForceSearch.Size = new System.Drawing.Size(389, 222);
             this.gb_bruteForceSearch.TabIndex = 2;
             this.gb_bruteForceSearch.TabStop = false;
             this.gb_bruteForceSearch.Text = "Brute Force";
             // 
+            // btn_approximation
+            // 
+            this.btn_approximation.Location = new System.Drawing.Point(85, 170);
+            this.btn_approximation.Name = "btn_approximation";
+            this.btn_approximation.Size = new System.Drawing.Size(205, 31);
+            this.btn_approximation.TabIndex = 7;
+            this.btn_approximation.Text = "Approximation Search";
+            this.btn_approximation.UseVisualStyleBackColor = true;
+            this.btn_approximation.Click += new System.EventHandler(this.btn_approximation_Click);
+            // 
             // btn_enchanced_brute_force
             // 
-            this.btn_enchanced_brute_force.Location = new System.Drawing.Point(187, 112);
+            this.btn_enchanced_brute_force.Location = new System.Drawing.Point(85, 133);
             this.btn_enchanced_brute_force.Name = "btn_enchanced_brute_force";
-            this.btn_enchanced_brute_force.Size = new System.Drawing.Size(168, 31);
+            this.btn_enchanced_brute_force.Size = new System.Drawing.Size(205, 31);
             this.btn_enchanced_brute_force.TabIndex = 6;
             this.btn_enchanced_brute_force.Text = "Enchaned Brute Force";
             this.btn_enchanced_brute_force.UseVisualStyleBackColor = true;
             this.btn_enchanced_brute_force.Click += new System.EventHandler(this.btn_enchanced_brute_force_Click);
             // 
-            // lbl_result
-            // 
-            this.lbl_result.AutoSize = true;
-            this.lbl_result.Location = new System.Drawing.Point(86, 123);
-            this.lbl_result.Name = "lbl_result";
-            this.lbl_result.Size = new System.Drawing.Size(0, 20);
-            this.lbl_result.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Result: ";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 23);
+            this.label3.Location = new System.Drawing.Point(85, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 20);
             this.label3.TabIndex = 3;
@@ -195,9 +186,9 @@ namespace VertexCover
             // 
             // btn_bruteForce
             // 
-            this.btn_bruteForce.Location = new System.Drawing.Point(187, 65);
+            this.btn_bruteForce.Location = new System.Drawing.Point(85, 96);
             this.btn_bruteForce.Name = "btn_bruteForce";
-            this.btn_bruteForce.Size = new System.Drawing.Size(168, 31);
+            this.btn_bruteForce.Size = new System.Drawing.Size(205, 31);
             this.btn_bruteForce.TabIndex = 1;
             this.btn_bruteForce.Text = "Brute Force";
             this.btn_bruteForce.UseVisualStyleBackColor = true;
@@ -205,16 +196,16 @@ namespace VertexCover
             // 
             // txt_bruteForce
             // 
-            this.txt_bruteForce.Location = new System.Drawing.Point(24, 67);
+            this.txt_bruteForce.Location = new System.Drawing.Point(85, 63);
             this.txt_bruteForce.Name = "txt_bruteForce";
-            this.txt_bruteForce.Size = new System.Drawing.Size(135, 27);
+            this.txt_bruteForce.Size = new System.Drawing.Size(205, 27);
             this.txt_bruteForce.TabIndex = 0;
             // 
             // pb
             // 
-            this.pb.Location = new System.Drawing.Point(14, 373);
+            this.pb.Location = new System.Drawing.Point(427, 12);
             this.pb.Name = "pb";
-            this.pb.Size = new System.Drawing.Size(389, 40);
+            this.pb.Size = new System.Drawing.Size(713, 40);
             this.pb.TabIndex = 3;
             // 
             // gb_kernelization
@@ -226,9 +217,9 @@ namespace VertexCover
             this.gb_kernelization.Controls.Add(this.btn_coloringGraph);
             this.gb_kernelization.Controls.Add(this.lbl_Tops);
             this.gb_kernelization.Controls.Add(this.txt_KEdges);
-            this.gb_kernelization.Location = new System.Drawing.Point(14, 428);
+            this.gb_kernelization.Location = new System.Drawing.Point(14, 445);
             this.gb_kernelization.Name = "gb_kernelization";
-            this.gb_kernelization.Size = new System.Drawing.Size(389, 223);
+            this.gb_kernelization.Size = new System.Drawing.Size(389, 188);
             this.gb_kernelization.TabIndex = 4;
             this.gb_kernelization.TabStop = false;
             this.gb_kernelization.Text = "Kernelization";
@@ -334,11 +325,9 @@ namespace VertexCover
         private System.Windows.Forms.TextBox tb_NrOfVertices;
         private System.Windows.Forms.PictureBox pb_Graph;
         private System.Windows.Forms.GroupBox gb_bruteForceSearch;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_bruteForce;
         private System.Windows.Forms.TextBox txt_bruteForce;
-        private System.Windows.Forms.Label lbl_result;
         private System.Windows.Forms.ProgressBar pb;
         private System.Windows.Forms.GroupBox gb_kernelization;
         private System.Windows.Forms.Label lbl_Tops;
@@ -349,6 +338,7 @@ namespace VertexCover
         private System.Windows.Forms.Button btn_pendentMinus;
         private System.Windows.Forms.Button btn_pendentPlus;
         private System.Windows.Forms.Button btn_enchanced_brute_force;
+        private System.Windows.Forms.Button btn_approximation;
     }
 }
 
