@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,16 +22,6 @@ namespace VertexCover
         {
             InitializeComponent();
         }
-
-        //private void btn_ViewGraph_Click(object sender, EventArgs e)
-        //{
-        //    Process dot = new Process();
-        //    dot.StartInfo.FileName = "dot.exe";
-        //    dot.StartInfo.Arguments = "-Tpng graph.dot -o graph.png";
-        //    dot.Start();
-        //    dot.WaitForExit();
-        //    pb_Graph.ImageLocation = "graph.png";
-        //}
 
         private void displayGraph()
         {
@@ -200,6 +191,40 @@ namespace VertexCover
             //prints size of vertex cover
             int size_covered_vertices = algorithm.ValidateAprox(graph, graph.Vertices);
             MessageBox.Show($"The graph can be covered with {size_covered_vertices} vertices");
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var process = new Process();
+                process.StartInfo = new ProcessStartInfo(@"graph.png")
+                {
+                    UseShellExecute = true
+                };
+                process.Start();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_view_dot_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var process = new Process();
+                process.StartInfo = new ProcessStartInfo(@"graph.dot")
+                {
+                    UseShellExecute = true
+                };
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -35,3 +35,4 @@ C:\Users\malja\OneDrive\Documenten\alg2-sem4\VertexCover\obj\Debug\net5.0-window
 C:\Users\malja\OneDrive\Documenten\alg2-sem4\VertexCover\obj\Debug\net5.0-windows\VertexCover.pdb
 C:\Users\malja\OneDrive\Documenten\alg2-sem4\VertexCover\obj\Debug\net5.0-windows\VertexCover.genruntimeconfig.cache
 C:\Users\malja\OneDrive\Documenten\alg2-sem4\VertexCover\obj\Debug\net5.0-windows\VertexCover.Properties.Resources.resources
+C:\Users\lungu\Desktop\Projects\alg2-sem4\VertexCover\obj\Debug\net5.0-windows\VertexCover.Properties.Resources.resources
