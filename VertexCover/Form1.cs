@@ -17,6 +17,7 @@ namespace VertexCover
     {
         Graph graph = new Graph();
         VC_ALG algorithm = new VC_ALG();
+        Stopwatch stopwatch = new Stopwatch();
 
         public Form1()
         {
@@ -70,6 +71,7 @@ namespace VertexCover
 
         private void btn_bruteForce_Click(object sender, EventArgs e)
         {
+            stopwatch.Start();
             graph.IsOkVertex = true;
             bool algResult = algorithm.BruteForce(graph, new bool[graph.Vertices], graph.Vertices, 0, Convert.ToInt32(txt_bruteForce.Text));
             if (algResult)
@@ -92,6 +94,9 @@ namespace VertexCover
                 graph.progress = 0;
                 MessageBox.Show("False");
             }
+            stopwatch.Stop();
+            MessageBox.Show(stopwatch.Elapsed.ToString());
+            stopwatch.Reset();
 
         }
 
@@ -141,6 +146,7 @@ namespace VertexCover
 
         private void btn_enchanced_brute_force_Click(object sender, EventArgs e)
         {
+            stopwatch.Start();
             int[] coverInitial = preprocess();
             graph.IsOkVertex = true;
 
@@ -165,6 +171,10 @@ namespace VertexCover
                 graph.progress = 0;
                 MessageBox.Show("False");
             }
+
+            stopwatch.Stop();
+            MessageBox.Show(stopwatch.Elapsed.ToString()); 
+            stopwatch.Reset();
         }
 
 
@@ -188,7 +198,6 @@ namespace VertexCover
 
         private void btn_approximation_Click(object sender, EventArgs e)
         {
-            //prints size of vertex cover
             int size_covered_vertices = algorithm.ValidateAprox(graph, graph.Vertices);
             MessageBox.Show($"The graph can be covered with {size_covered_vertices} vertices");
         }
