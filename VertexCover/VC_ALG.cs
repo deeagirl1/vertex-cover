@@ -144,14 +144,16 @@ namespace VertexCover
                 }
                 //if not found then exit, otherwise add to cover
                 if (maxUncoveredNeighbours == 0)
+                {
                     valid = true;
+                }  
                 else
                 {
                     cover.Add(candidateIndex);
                     assignment[candidateIndex] = 1;
                 }
             }
-            // size of cover and print
+            // size of cover and return it
             int size = 0;
             for (int i = 0; i < vertices; i++)
             {
